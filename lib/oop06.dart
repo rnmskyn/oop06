@@ -21,20 +21,20 @@ abstract class CanBreathUnderWater {
   void breath();
 }
 
-class Fish extends Animal {
+class Fish extends Animal implements CanBreathUnderWater {
   Fish(super.name);
-}
-
-class Goldfish extends Fish implements CanBreathUnderWater {
-  Goldfish(super.name);
-  @override
-  void makeSound() {
-    print("Hi, i am a goldfish, my name is $name. Nice to meet you!");
-  }
 
   @override
   void breath() {
     print("I am breathing under water");
+  }
+}
+
+class Goldfish extends Fish {
+  Goldfish(super.name);
+  @override
+  void makeSound() {
+    print("Hi, i am a goldfish, my name is $name. Nice to meet you!");
   }
 }
 
